@@ -1,1 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo HTML, CSS e DOM</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: lightblue;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: lightgray;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        main {
+            padding: 20px;
+            min-height: 200px;
+        }
+
+        footer {
+            background-color: gray;
+            padding: 20px;
+        }
+
+        .bloco-footer {
+            padding: 15px;
+            margin: 10px;
+        }
+
+        #bloco1 { background-color: lightcoral; }
+        #bloco2 { background-color: lightgreen; }
+        #bloco3 { background-color: lightyellow; }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Meu Site</h1>
+    </header>
+
+    <nav>
+        <a href="#">Início</a>
+        <a href="#">Sobre</a>
+        <a href="#">Contato</a>
+    </nav>
+
+    <main id="conteudo">
+        <!-- O JavaScript criará os elementos aqui -->
+    </main>
+
+    <script>
+        // 1. Selecionar o elemento main
+        const main = document.getElementById("conteudo");
+
+        // 2. MODIFICAR O CSS VIA JAVASCRIPT (Cor de fundo e Centralização)
+        main.style.backgroundImage = "radial-gradient(circle, #dcebf2, #adcdde)";
+        main.style.display = "flex";
+        main.style.flexDirection = "column";
+        main.style.alignItems = "center";
+        main.style.justifyContent = "center";
+        main.style.textAlign = "center";
+
+        // 3. CRIAR TÍTULO (h1)
+        const titulo = document.createElement("h1");
+        titulo.textContent = "Feira das Nações";
+        main.appendChild(titulo);
+
+        // 4. CRIAR PRIMEIRO PARÁGRAFO
+        const paragrafo1 = document.createElement("p");
+        paragrafo1.textContent = "Confira abaixo os principais destaques da nossa experiência no evento:";
+        main.appendChild(paragrafo1);
+
+        // 5. CRIAR IMAGEM (Bandeiras dos países)
+        const imagem = document.createElement("img");
+        imagem.src = "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=500&auto=format&fit=crop";
+        imagem.alt = "Bandeiras de diversos países";
+        imagem.style.borderRadius = "8px";
+        imagem.style.margin = "15px 0";
+        imagem.style.maxWidth = "100%";
+        imagem.style.height = "auto";
+        main.appendChild(imagem);
+
+        // 6. CRIAR SEGUNDO PARÁGRAFO
+        const paragrafo2 = document.createElement("p");
+        paragrafo2.textContent = "O que mais gostei da Feira das Nações:";
+        main.appendChild(paragrafo2);
+
+        // 7. CRIAR LISTA ORDENADA (ol)
+        const lista = document.createElement("ol");
+        lista.style.textAlign = "left";
+
+        const item1 = document.createElement("li");
+        item1.textContent = "Diversidade cultural";
+        lista.appendChild(item1);
+
+        const item2 = document.createElement("li");
+        item2.textContent = "As vestimentas das pessoas que usaram para apresentar o país";
+        lista.appendChild(item2);
+
+        const item3 = document.createElement("li");
+        item3.textContent = "As dinâmicas que cada apresentação teve";
+        lista.appendChild(item3);
+
+        main.appendChild(lista);
+
+        // 8. CRIAR PARÁGRAFO DE CONCLUSÃO (Maior e bem estruturado)
+        const conclusao = document.createElement("p");
+        conclusao.textContent = "Em resumo, participar da Feira das Nações foi uma experiência extremamente enriquecedora. Além de aprender bastante sobre os costumes e tradições de diferentes partes do mundo, ver o empenho de cada grupo na dedicação às roupas típicas e às apresentações interativas tornou tudo ainda mais especial. Foi um evento que uniu aprendizado, criatividade e respeito às diversas culturas.";
+        conclusao.style.maxWidth = "600px";
+        conclusao.style.marginTop = "20px";
+        conclusao.style.lineHeight = "1.6";
+        main.appendChild(conclusao);
+    </script>
+
+</body>
+</html>
